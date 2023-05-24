@@ -1,0 +1,36 @@
+body {
+    /* background-color: #7FDBFF; */
+    font-family: 'Roboto Mono', monospace;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+    border: 70px solid #CA5C4D;
+    border-radius: 10px;
+    width: 488px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.grid-cell {
+    min-width: 100px;
+    min-height: 100px;
+    border: 1px black solid;
+    padding: 10px;
+}
+
+.grid-cell-hover { 
+    background-color: gray;
+}
