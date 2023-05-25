@@ -6,7 +6,25 @@ body {
 
 .header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.header button {
+    display:inline-block;
+    padding:0.35em 2.5em;
+    /* border:0.1em solid #FFFFFF; */
+    margin:0 0.3em 1em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    font-size: large;
+    color: black;
+    text-align:center;
+    transition: all 0.2s;
 }
 
 .main {
@@ -15,9 +33,9 @@ body {
 }
 
 .grid {
-    border: 70px solid #CA5C4D;
+    border: 50px solid #CA5C4D;
     border-radius: 10px;
-    width: 488px;
+    width: 500px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -25,8 +43,8 @@ body {
 }
 
 .grid-cell {
-    min-width: 100px;
-    min-height: 100px;
+    /* min-width: 103px;
+    min-height: 100px; */
     border: 1px black solid;
     padding: 10px;
 }
