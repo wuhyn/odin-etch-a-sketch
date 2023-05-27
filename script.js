@@ -21,10 +21,10 @@ function createGrid(){
 */
 function addHoverEffect(){
     // Add event listener to trigger hover styling only once
-    const gridCell = document.querySelectorAll(".grid-cell");
+    const gridCell = document.querySelectorAll(".grid-item");
 
     gridCell.forEach(cell => 
-        cell.addEventListener("mouseover", () => cell.classList.toggle("grid-cell-hover"), {once: true})
+        cell.addEventListener("mouseover", () => cell.classList.toggle("grid-item-hover"), {once: true})
     );
 }
 

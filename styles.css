@@ -28,24 +28,26 @@ body {
 
 .grid-container {
     display: grid;
-    border: 10px solid blue;
-    width: 480px;
-    height: 480px;
-    /* margin: 0 auto; */
+    border: 25px solid #C72E00;
+    border-radius: 10px;
+    width: 550px;
+    height: 500px;
+    margin: 0 auto;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
-
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 0.5px;
+    column-gap: 0.5px;
+    padding: 1px;
 }
 
 .grid-item {
-    border: 1px solid black;
+    border: 1px solid gray;
 
 }
 
-/* .grid-cell-hover { 
+.grid-item-hover { 
     background-color: gray;
-} */
+}
