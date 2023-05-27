@@ -92,9 +92,31 @@ function addHoverEffect(){
 }
 
 /**
+* Apply rainbow hover effect on each grid item
+*/
+function addRainbowHoverEffect(){
+
+    const gridItem = document.querySelectorAll(".grid-item");
+
+    gridItem.forEach(cell => 
+        cell.addEventListener("mouseover", () => cell.setAttribute("style", `background-color: rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`), {once: true})
+    );
+}
+
+
+/**
+* Add a listener to the activate rainbow mode
+*/
+const randomBtn = document.getElementById("rainbow-btn");
+
+randomBtn.addEventListener("click", function(){
+    addRainbowHoverEffect();
+})
+
+/**
 * Add a listener to the button to apply a new Etch A Sketch grid size
 */
-const promptButton = document.querySelector(".prompt-btn");
+const promptButton = document.getElementById("prompt-btn");
 
 promptButton.addEventListener("click", function(){
     const promptGridSize = prompt("Please enter a new Etch A Sketch grid size.");
