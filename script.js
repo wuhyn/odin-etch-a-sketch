@@ -51,9 +51,32 @@ function updateGrid(gridSize){
 * Reset grid to clear any sketches made by the user
 */
 function resetGrid(){
-    const gridItem = document.querySelectorAll('.grid-item');
+    const mainNode = document.querySelector('.grid');
+    const gridSize = mainNode.childElementCount;
 
-    gridItem.forEach(cell => cell.classList.remove("grid-item-hover"));
+    // Remove all child elements
+    while (mainNode.firstChild) {
+        mainNode.removeChild(mainNode.lastChild);
+    }
+
+    // Generate new grid items
+    for(let i=0; i<gridSize; i++){
+        let newNode = document.createElement("div");
+
+        newNode.classList.toggle("grid-item");
+
+        mainNode.appendChild(newNode);
+    }
+
+    //Dynamically set the grid template size for rows and columns based on user input
+    const grid = document.querySelector('.grid');
+
+    let gridTemplateSize = Math.sqrt(gridSize);
+
+    grid.setAttribute("style", `grid-template-columns: repeat(${gridTemplateSize}, 1fr); grid-template-rows: repeat(${gridTemplateSize}, 1fr);`);
+
+    addHoverEffect();
+
 }
 
 /**
