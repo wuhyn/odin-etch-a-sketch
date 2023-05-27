@@ -70,8 +70,8 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns:  repeat(4, 1fr);
-    grid-template-rows:  repeat(4, 1fr);
+    grid-template-columns:  repeat(16, 1fr);
+    grid-template-rows:  repeat(16, 1fr);
     row-gap: 0.5px;
     column-gap: 0.5px;
     padding: 1px;

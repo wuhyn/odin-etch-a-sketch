@@ -1,11 +1,11 @@
 /**
-* Creates a 16x16 Etch A Sketch grid 
+* Creates a 16x16 Etch A Sketch grid,a 16x16 has 256 grid items
 */
 function createGrid(){
 
     const mainNode = document.querySelector('.grid');
 
-    for(let i=0; i<16; i++){
+    for(let i=0; i<256; i++){
         
         let newNode = document.createElement("div");
 
@@ -22,6 +22,7 @@ function createGrid(){
 */
 function updateGrid(gridSize){
     const mainNode = document.querySelector('.grid');
+    const totalGridItems = gridSize * gridSize;
 
     // Remove all child elements
     while (mainNode.firstChild) {
@@ -29,7 +30,7 @@ function updateGrid(gridSize){
     }
 
     // Generate new grid items
-    for(let i=0; i<gridSize; i++){
+    for(let i=0; i<totalGridItems; i++){
         let newNode = document.createElement("div");
 
         newNode.classList.toggle("grid-item");
@@ -40,7 +41,7 @@ function updateGrid(gridSize){
     //Dynamically set the grid template size for rows and columns based on user input
     const grid = document.querySelector('.grid');
 
-    let gridTemplateSize = Math.sqrt(gridSize);
+    let gridTemplateSize = Math.sqrt(totalGridItems);
 
     grid.setAttribute("style", `grid-template-columns: repeat(${gridTemplateSize}, 1fr); grid-template-rows: repeat(${gridTemplateSize}, 1fr);`);
 
@@ -52,7 +53,7 @@ function updateGrid(gridSize){
 */
 function resetGrid(){
     const mainNode = document.querySelector('.grid');
-    const gridSize = mainNode.childElementCount;
+    const totalGridItems = mainNode.childElementCount;
 
     // Remove all child elements
     while (mainNode.firstChild) {
@@ -60,7 +61,7 @@ function resetGrid(){
     }
 
     // Generate new grid items
-    for(let i=0; i<gridSize; i++){
+    for(let i=0; i<totalGridItems; i++){
         let newNode = document.createElement("div");
 
         newNode.classList.toggle("grid-item");
@@ -71,7 +72,7 @@ function resetGrid(){
     //Dynamically set the grid template size for rows and columns based on user input
     const grid = document.querySelector('.grid');
 
-    let gridTemplateSize = Math.sqrt(gridSize);
+    let gridTemplateSize = Math.sqrt(totalGridItems);
 
     grid.setAttribute("style", `grid-template-columns: repeat(${gridTemplateSize}, 1fr); grid-template-rows: repeat(${gridTemplateSize}, 1fr);`);
 
