@@ -13,6 +13,8 @@ function createGrid(){
 
         mainNode.appendChild(newNode);
     }
+
+    addHoverEffect();
 }
 
 /**
@@ -40,28 +42,34 @@ function updateGrid(gridSize){
 
     let gridTemplateSize = Math.sqrt(gridSize);
 
-    grid.setAttribute("style", "background-color: blue;");
     grid.setAttribute("style", `grid-template-columns: repeat(${gridTemplateSize}, 1fr); grid-template-rows: repeat(${gridTemplateSize}, 1fr);`);
+
+    addHoverEffect();
 }
 
 /**
-* Adds mouseover event listener to each Etch A Sketch grid cell
+* Reset grid to clear any sketches made by the user
+*/
+function resetGrid(){
+    const gridItem = document.querySelectorAll('.grid-item');
+
+    gridItem.forEach(cell => cell.classList.remove("grid-item-hover"));
+}
+
+/**
+* Apply style change to each grid item
 */
 function addHoverEffect(){
     // Add event listener to trigger hover styling only once
-    const gridCell = document.querySelectorAll(".grid-item");
+    const gridItem = document.querySelectorAll(".grid-item");
 
-    gridCell.forEach(cell => 
+    gridItem.forEach(cell => 
         cell.addEventListener("mouseover", () => cell.classList.toggle("grid-item-hover"), {once: true})
     );
 }
 
-createGrid();
-
-addHoverEffect();
-
 /**
-* Add listener
+* Add a listener to the button to apply a new Etch A Sketch grid size
 */
 const promptButton = document.querySelector(".prompt-btn");
 
@@ -82,3 +90,16 @@ promptButton.addEventListener("click", function(){
         updateGrid(gridSize);
     }
 })
+
+/**
+* Add a listener to the button to apply a new Etch A Sketch grid size
+*/
+const resetButton = document.getElementById("reset-btn");
+
+resetButton.addEventListener("click", function(){
+    resetGrid();
+})
+
+
+createGrid();
+
